@@ -1,0 +1,32 @@
+diff -ur maxfighter_1.0.orig/SConstruct maxfighter_1.0/SConstruct
+--- maxfighter_1.0.orig/SConstruct	2006-09-02 05:25:53.000000000 +0200
++++ maxfighter_1.0/SConstruct	2007-05-20 15:10:04.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ def BuildForPlatform(platform,dist):
+ 	env=Environment(tools=['mingw'],
+-									CXXFLAGS=['-march=pentium']);
++									CXXFLAGS=Split(ARGUMENTS.get('CXXFLAGS','')));
+ 
+ 	if(platform==''):
+ 		if(env['PLATFORM']=='posix'):
+@@ -19,7 +19,7 @@
+ 	env.Clean(BUILD_TARGETS,'dist/'+platform);
+ 
+ 	if(dist=='1'):
+-		env.Append(CXXFLAGS=['-O3']);
++		env.Append(CXXFLAGS=['']);
+ 		env.Append(CPPDEFINES=['MYSDL_DEBUG_INFO']);
+ 	else:
+ 		env.Append(CXXFLAGS=['-ggdb']);
+@@ -85,6 +85,10 @@
+ 					print 'OpenAL library required.';
+ 					Exit(1);
+ 
++			if(not(conf.CheckLibWithHeader('png','png.h','c++','main();'))):
++					print 'PNG library required.';
++					Exit(1);
++
+ 			env.Append(LIBS='vorbisfile');
+ 			env.Append(LIBS='vorbis');
+ 			env.Append(LIBS='ogg');
