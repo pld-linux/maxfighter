@@ -21,8 +21,10 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+Max Fighter vertical shoot'em up.
 
 %description -l pl.UTF-8
+Strzelanka kosmiczna Max Fighter.
 
 %prep
 %setup -q -n %{name}_%{version}
