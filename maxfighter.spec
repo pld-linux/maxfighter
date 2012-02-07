@@ -2,7 +2,7 @@ Summary:	Max Fighter vertical shoot'em up
 Summary(pl.UTF-8):	Strzelanka kosmiczna Max Fighter
 Name:		maxfighter
 Version:	1.0.1
-Release:	2
+Release:	3
 License:	GPL, Creative Commons NCSA 2.5
 Group:		X11/Applications/Games
 Source0:	http://source.musgit.com/files/%{name}_%{version}.tar.bz2
