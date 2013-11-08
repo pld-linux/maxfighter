@@ -30,3 +30,12 @@ diff -ur maxfighter_1.0.orig/SConstruct maxfighter_1.0/SConstruct
  			env.Append(LIBS='vorbisfile');
  			env.Append(LIBS='vorbis');
  			env.Append(LIBS='ogg');
+@@ -157,7 +157,7 @@
+ 		env.Install(DIST_DIR+"/resources/sounds",glob.glob("resources/sounds/*.txt"));
+ 
+ 		if(platform=='linux'):
+-			env.Install(DIST_DIR,[BUILD_DIR+'/maxfighter']);
++			env.Install(DIST_DIR,[BUILD_DIR+'/maxfighter.exe']);
+ 			env.Install(DIST_DIR,['packaging/linux/install.sh','packaging/linux/uninstall.sh','packaging/linux/README']);
+ 			#env.Install(DIST_DIR,['packaging/readme.txt']);
+ 		else:
