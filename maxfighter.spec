@@ -28,7 +28,7 @@ Strzelanka kosmiczna Max Fighter.
 
 %prep
 %setup -q -n %{name}_%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 sed -i "/RESOURCEDIR/s|resources/|/usr/share/games/%{name}/|" SConstruct
